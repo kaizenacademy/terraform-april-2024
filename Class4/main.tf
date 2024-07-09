@@ -5,7 +5,10 @@ provider aws {
 resource "aws_instance" "web" {
   ami           = var.ami_id
   instance_type = var.instance_type
+  availability_zone = var.kaizen
 }
+
+variable kaizen {} # run export TF_VAR_kaizen=us-east-2
 
 variable ami_id {
   description = "Provide ami id"
